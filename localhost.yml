@@ -32,7 +32,6 @@
       - { name: rbenv }
       - { name: ruby-build }
       - { name: lha }
-      - { name: mysql }
       - { name: sqlite }
       - { name: redis }
       - { name: imagemagick }
@@ -42,6 +41,7 @@
       - { name: reattach-to-user-namespace }
       - { name: phantomjs }
       - { name: source-highlight }
+      # - { name: mysql }
     homebrew_cask_packages:
       - { name: iterm2 }
       - { name: skype }

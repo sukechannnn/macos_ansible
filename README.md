@@ -7,7 +7,7 @@ Reference is [t-wada's Blog](http://t-wada.hatenablog.jp/entry/mac-provisioning-
 - Install Xcode from AppStore
   - ```sudo xcodebuild -license```
   - ```xcode-select --install```
-- install Homebrew
+- Install Homebrew
   - ```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
   - ```brew doctor```
   - ```brew update```

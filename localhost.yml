@@ -84,7 +84,7 @@
 
     # cask
     - name: homebrew-cask のインストール
-      homebrew: name=brew-cask state=latest
+      homebrew_tap: name=caskroom/cask state=latest
     - name: cask パッケージをインストール
       homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
       with_items: "{{ homebrew_cask_packages }}"

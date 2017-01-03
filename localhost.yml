@@ -52,9 +52,9 @@
       - { name: flux }
       - { name: dash }
       - { name: atom }
-      - { name: kobito }
       - { name: vagrant }
       - { name: virtualbox }
+      # - { name: kobito }
 
   tasks:
     - name: homebrew の tap リポジトリを追加

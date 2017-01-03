@@ -93,11 +93,11 @@
       shell: brew cask info {{ item }} > cask_info/{{ item }}
       with_items: "{{ cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list }}"
 
-    # oh-my-zsh
-    - name: oh-my-zsh のインストール
-      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-      args:
-        creates: ~/.oh-my-zsh/
-
     - name: xquartz のインストール
       homebrew_cask: name=xquartz
+
+    - name: install anyenv
+      git: repo=git@github.com:riywo/anyenv.git dest=~/.anyenv version=master accept_hostkey=yes
+
+    - name: isntall zprezto
+      git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto version=master accept_hostkey=yes

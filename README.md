@@ -1,7 +1,5 @@
 # macos_ansible
 
-Reference is [t-wada's Blog](http://t-wada.hatenablog.jp/entry/mac-provisioning-by-ansible)
-
 ## Usage
 
 - Install Xcode from AppStore

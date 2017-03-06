@@ -96,8 +96,28 @@
     - name: xquartz のインストール
       homebrew_cask: name=xquartz
 
+    - name: isntall zprezto
+      git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto version=master accept_hostkey=yes
+
     - name: install anyenv
       git: repo=git@github.com:riywo/anyenv.git dest=~/.anyenv version=master accept_hostkey=yes
 
-    - name: isntall zprezto
-      git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto version=master accept_hostkey=yes
+    - name: config anyenv
+      lineinfile: >
+        dest=~/.zshrc
+        line={{ item }}
+      with_items:
+        - 'export PATH="$HOME/.anyenv/bin:$PATH"'
+        - 'eval "$(anyenv init -)"'
+
+    - name: mkdir for anyenv-update
+      file: path=~/.anyenv/plugins state=directory
+
+    - name: install anyenv-update
+      git: repo=git@github.com:znz/anyenv-update.git dest=~/.anyenv/plugins/anyenv-update version=master accept_hostkey=yes
+
+    - name: install rbenv
+      shell: /bin/bash -lc "anyenv install rbenv"
+
+    - name: install ndenv
+      shell: /bin/bash -lc "anyenv install ndenv"

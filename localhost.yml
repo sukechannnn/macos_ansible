@@ -15,7 +15,8 @@
       - { name: python }
       - { name: ansible }
       - { name: coreutils }
-      - { name: zsh, install_options: disable-etcdir }
+      - { name: zsh }
+      - { name: zsh-completions }
       - { name: wget }
       - { name: curl }
       - { name: pkg-config }
@@ -98,6 +99,9 @@
 
     - name: isntall zprezto
       git: repo=git@github.com:sorin-ionescu/prezto.git dest=~/.zprezto version=master accept_hostkey=yes
+
+    - name: rebuild zcompdump
+      shell: /bin/bash -lc "rm -f ~/.zcompdump; compinit"
 
     - name: install anyenv
       git: repo=git@github.com:riywo/anyenv.git dest=~/.anyenv version=master accept_hostkey=yes

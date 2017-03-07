@@ -102,13 +102,13 @@
     - name: install anyenv
       git: repo=git@github.com:riywo/anyenv.git dest=~/.anyenv version=master accept_hostkey=yes
 
-    - name: config anyenv
-      lineinfile: >
-        dest=~/.zshrc
-        line={{ item }}
-      with_items:
-        - 'export PATH="$HOME/.anyenv/bin:$PATH"'
-        - 'eval "$(anyenv init -)"'
+    # - name: config anyenv
+    #   lineinfile: >
+    #     dest=~/.zshrc
+    #     line={{ item }}
+    #   with_items:
+    #     - 'export PATH="$HOME/.anyenv/bin:$PATH"'
+    #     - 'eval "$(anyenv init -)"'
 
     - name: mkdir for anyenv-update
       file: path=~/.anyenv/plugins state=directory
